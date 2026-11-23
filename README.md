@@ -17,6 +17,10 @@
 - **Interactive site:** open [`index.html`](index.html) — bilingual RO/EN toggle, fully offline, no dependencies.
 - **PDF RO:** [`Portofoliu_RO.pdf`](Portofoliu_RO.pdf) · **PDF EN:** [`Portfolio_EN.pdf`](Portfolio_EN.pdf)
 - **Live site:** [lazytitan0074.github.io/portfolio](https://lazytitan0074.github.io/portfolio/)
+- **CV:** [RO](CV_RO.pdf) · [EN](CV_EN.pdf) · [Markdown](CV.md)
+- **Screenshots:** [hero](docs/screenshots/01-hero.png) · [method](docs/screenshots/02-method-and-projects.png) · [projects](docs/screenshots/03-projects.png) · [case study](docs/screenshots/04-case-study.png)
+
+![Portfolio hero](docs/screenshots/01-hero.png)
 
 ---
 
