@@ -16,7 +16,7 @@
 
 - **Interactive site:** open [`index.html`](index.html) — bilingual RO/EN toggle, fully offline, no dependencies.
 - **PDF RO:** [`Portofoliu_RO.pdf`](Portofoliu_RO.pdf) · **PDF EN:** [`Portfolio_EN.pdf`](Portfolio_EN.pdf)
-- **Live site:** `https://lazyTitan0074.github.io/portfolio/` *(after Pages is enabled)*
+- **Live site:** [lazytitan0074.github.io/portfolio](https://lazytitan0074.github.io/portfolio/)
 
 ---
 
