@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vlad — AI Systems &amp; Agentic Workflows</title>
+<style>
+:root{--bg:#080d18;--panel:#101827;--panel2:#0c1422;--line:#22304a;--txt:#e8eef8;--muted:#9aa9c0;--a:#5eead4;--b:#a78bfa;--c:#7dd3fc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1100px 600px at 12% -10%,#12324a 0%,transparent 60%),radial-gradient(900px 500px at 95% 5%,#241a45 0%,transparent 55%),var(--bg);color:var(--txt);font-family:Inter,"DejaVu Sans",system-ui,-apple-system,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.l.ro,.l.en{}
+body[data-lang="ro"] .l.en,body[data-lang="en"] .l.ro{display:none}
+header{padding:78px 0 54px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:18px;margin-bottom:34px}
+.mark{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;font-weight:800;font-size:26px;color:#07111f;box-shadow:0 12px 34px rgba(94,234,212,.18)}
+.brand small{display:block;color:var(--muted);letter-spacing:.22em;font-size:11px;text-transform:uppercase}
+h1{font-size:clamp(44px,8vw,88px);line-height:.98;margin:0 0 18px;letter-spacing:-.05em}
+h1 span{background:linear-gradient(100deg,var(--a),var(--c) 45%,var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:clamp(17px,2.4vw,25px);margin:0 0 22px;color:var(--c);font-weight:500}
+.lede{max-width:760px;color:var(--muted);font-size:16px;margin:0}
+.lede strong{color:var(--txt)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;align-items:center}
+.btn{display:inline-block;padding:11px 19px;border-radius:10px;border:1px solid var(--line);color:var(--txt);text-decoration:none;font-size:13px;font-weight:600;background:rgba(255,255,255,.03)}
+.btn.primary{background:linear-gradient(100deg,var(--a),var(--c));color:#06121e;border-color:transparent}
+.btn:hover{transform:translateY(-1px);border-color:var(--a)}
+.langswitch{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.langswitch button{background:transparent;color:var(--muted);border:0;padding:10px 15px;font-weight:700;font-size:12px;cursor:pointer}
+.langswitch button.on{background:var(--a);color:#06121e}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:30px 0 0}
+.stat{border-left:2px solid var(--a);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:26px;letter-spacing:-.03em}
+.stat span{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+section{padding:58px 0 8px}
+.kicker{color:var(--a);font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
+h2{font-size:clamp(26px,4vw,40px);letter-spacing:-.035em;margin:0 0 12px}
+.sec-intro{color:var(--muted);max-width:740px;margin:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:2px;background:linear-gradient(90deg,var(--a),transparent 70%);opacity:.75}
+.card .num{position:absolute;right:22px;top:16px;font-size:46px;font-weight:800;color:rgba(255,255,255,.045);letter-spacing:-.06em}
+.cat{color:var(--a);font-size:10px;letter-spacing:.16em;font-weight:700;text-transform:uppercase}
+.card h3{font-size:23px;margin:10px 0 5px;letter-spacing:-.02em}
+.card .sub{color:var(--c);margin:0 0 14px;font-size:14px;font-weight:500}
+.card p{font-size:14px;color:#cbd6e6;margin:0 0 12px}
+.how{border-left:2px solid var(--b);padding-left:13px;color:var(--muted);font-size:13px;margin:14px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+.chip{font-size:10px;font-family:ui-monospace,"DejaVu Sans Mono",monospace;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 9px;background:rgba(255,255,255,.02)}
+.result{font-size:12px;color:var(--a);font-weight:600;border-top:1px dashed var(--line);padding-top:12px;margin-top:4px}
+a.src{color:var(--c);font-size:12px;text-decoration:none;border-bottom:1px dotted var(--c)}
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.step{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:20px}
+.step i{font-style:normal;color:var(--b);font-family:ui-monospace,monospace;font-size:12px}
+.step b{display:block;margin:9px 0 6px;font-size:15px}
+.step p{color:var(--muted);font-size:12.5px;margin:0}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0}
+.metric{background:rgba(167,139,250,.07);border:1px solid rgba(167,139,250,.25);border-radius:13px;padding:16px}
+.metric b{display:block;font-size:24px;color:var(--b)}
+.metric span{color:var(--muted);font-size:11px}
+.arch{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.arch div{background:var(--panel2);border:1px solid var(--line);border-radius:13px;padding:18px}
+.arch b{font-size:14px}.arch p{color:var(--muted);font-size:12.5px;margin:7px 0 0}
+.agents{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.agents div{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12px;background:rgba(255,255,255,.025)}
+.agents em{font-style:normal;color:var(--muted)}
+footer{margin-top:70px;border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:12px}
+footer a{color:var(--c)}
+code{font-family:ui-monospace,"DejaVu Sans Mono",monospace;font-size:.9em;color:var(--a);background:rgba(94,234,212,.07);padding:1px 5px;border-radius:5px}
+@page{size:A4;margin:15mm 14mm}
+@media print{
+  :root{--bg:#fff;--panel:#fff;--panel2:#fff;--line:#d6deea;--txt:#111827;--muted:#4b5563;--a:#0f766e;--b:#6d28d9;--c:#0e7490}
+  body{background:#fff!important;color:#111827!important;font-size:10.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  header{padding:0 0 18px}.wrap{max-width:none;padding:0}
+  h1{font-size:38pt}h2{font-size:20pt}.lede,.sec-intro{font-size:10pt}
+  .grid,.arch,.workflow,.metrics,.stats{gap:8px}
+  .card,.step,.metric,.arch div{background:#fff!important;border:1px solid #d6deea!important;break-inside:avoid;page-break-inside:avoid;padding:12px}
+  .card h3{font-size:14pt}.card p,.card .how,.card .sub,.step p,.arch p{font-size:9.2pt}
+  .num{display:none}.langswitch,.actions{display:none}
+  section{padding:22px 0 0}footer{margin-top:26px;padding-top:14px}
+  a{color:#0e7490;text-decoration:none}
+  code{color:#0f766e;background:rgba(15,118,110,.07)}
+}
+</style></head>
+<body data-lang="ro">
+<div class="wrap">
+<header>
+  <div class="brand"><div class="mark">V</div><div><small><span class="l ro">Portofoliu tehnic</span><span class="l en">Technical portfolio</span></small><small>2026 · v1.0</small></div></div>
+  <h1>VLAD<span>.</span></h1>
+  <p class="role"><span class="l ro">AI Systems Builder · Agentic Workflows · Long-form Generation</span><span class="l en">AI Systems Builder · Agentic Workflows · Long-form Generation</span></p>
+  <p class="lede"><span class="l ro">Proiectele de aici nu au fost doar „scrise cu AI”. Au fost <strong>proiectate, implementate, depanate și documentate împreună cu agenți AI</strong> — cu omul în rol de arhitect care stabilește regulile și face verificarea finală. Fiecare afirmație din acest portofoliu poate fi urmărită până la un fișier sau un commit.</span><span class="l en">These projects were not merely “written with AI”. They were <strong>designed, implemented, debugged and documented together with AI agents</strong> — with the human acting as architect who sets the rules and performs final verification. Every claim here traces back to a file or a commit.</span></p>
+  <div class="actions">
+    <a class="btn primary" href="#projects"><span class="l ro">Vezi proiectele</span><span class="l en">View projects</span> →</a>
+    <a class="btn" href="mailto:bizoivlad@gmail.com">bizoivlad@gmail.com</a>
+    <div class="langswitch"><button data-l="ro">RO</button><button data-l="en">EN</button></div>
+  </div>
+  <div class="stats"><div class="stat"><b>05</b><span><span class="l ro">proiecte principale</span><span class="l en">featured projects</span></span></div><div class="stat"><b>03</b><span><span class="l ro">repositorii publice</span><span class="l en">public repositories</span></span></div><div class="stat"><b>50</b><span><span class="l ro">capitole livrate</span><span class="l en">chapters delivered</span></span></div><div class="stat"><b>88/88</b><span><span class="l ro">teste verzi</span><span class="l en">tests passing</span></span></div><div class="stat"><b>02</b><span><span class="l ro">skilluri agent custom</span><span class="l en">custom agent skills</span></span></div></div>
+</header>
+
+<section id="method">
+  <p class="kicker"><span class="l ro">Cum lucrez</span><span class="l en">How I work</span></p>
+  <h2><span class="l ro">Agenții construiesc. Omul decide.</span><span class="l en">Agents build. Humans decide.</span></h2>
+  <p class="sec-intro"><span class="l ro">Nu folosesc AI-ul ca pe un buton de „generează și gata”. Îl folosesc ca pe o echipă: roluri separate, porți explicite, jurnale care rămân în repository. Aici e fluxul repetabil, așa cum apare el în fișierele proiectelor.</span><span class="l en">I do not treat AI as a single “generate and done” button. I use it as a team: separate roles, explicit gates, and logs that stay in the repository. This is the repeatable workflow, exactly as it appears in the project files.</span></p>
+  <div class="workflow"><div class="step"><i>01</i><b><span class="l ro">Specificație & canon</span><span class="l en">Spec & canon</span></b><p><span class="l ro">Regulile, personajele și restricțiile devin fișiere versionate, nu note în cap.</span><span class="l en">Rules, characters and constraints become versioned files, not notes in someone’s head.</span></p></div><div class="step"><i>02</i><b><span class="l ro">Planificare agentică</span><span class="l en">Agentic planning</span></b><p><span class="l ro">Agenții propun structura, sarcinile și ordinea porților de verificare.</span><span class="l en">Agents propose structure, tasks and the order of verification gates.</span></p></div><div class="step"><i>03</i><b><span class="l ro">Iterare cu porți</span><span class="l en">Iterate with gates</span></b><p><span class="l ro">Scriitor → reviewer cu alt model → verificare deterministă → rescriere completă la eșec.</span><span class="l en">Writer → different-model reviewer → deterministic check → full rewrite on failure.</span></p></div><div class="step"><i>04</i><b><span class="l ro">Dovadă & documentare</span><span class="l en">Evidence & docs</span></b><p><span class="l ro">Veredicte, jurnale, audituri și teste rămân în repository alături de cod.</span><span class="l en">Verdicts, logs, audits and tests live in the repository next to the code.</span></p></div></div>
+</section>
+
+<section id="projects">
+  <p class="kicker"><span class="l ro">Proiecte selectate</span><span class="l en">Selected work</span></p>
+  <h2><span class="l ro">Ce am construit, exact</span><span class="l en">What I built, precisely</span></h2>
+  <p class="sec-intro"><span class="l ro">Cinci proiecte reprezentative, din conducte de generare ficțiune până la infrastructură self-hosted. Detaliile „HOW” sunt preluate din documentația și istoricul fiecărui proiect.</span><span class="l en">Five representative projects, from fiction-generation pipelines to self-hosted infrastructure. The “HOW” details come from each project’s documentation and history.</span></p>
+  <div class="grid"><article class="card">
+<span class="num">01</span>
+<div class="cat"><span class="l ro">SISTEME AI · OPEN SOURCE</span><span class="l en">AI SYSTEMS · OPEN SOURCE</span></div>
+<h3>Roman Pipeline</h3>
+<p class="sub"><span class="l ro">Pipeline de producție ficțiune condus de agenți AI</span><span class="l en">Agent-driven long-form fiction production pipeline</span></p>
+<p><span class="l ro">Un sistem Python care duce o idee de roman de la concept la EPUB prin etape explicite, verificabile: biblie de canon, personaje și scene, apoi scrierea și validarea fiecărui capitol. Respingerile nu sunt „peticite” — capitolul este rescris integral.</span><span class="l en">A Python system that takes a novel idea from concept to EPUB through explicit, verifiable stages: canon bible, characters and scenes, then per-chapter writing and validation. Rejected chapters are never patched — they are fully rewritten.</span></p>
+<div class="how"><b>HOW / CUM:</b> <span class="l ro">Asamblat iterativ cu <strong>Hermes Agent</strong>; regulile agentului sunt versionate în <code>AGENT.md</code> și <code>PROJECT_BRIEFING.md</code>. Fiecare capitol trece printr-un model scriitor, un reviewer cu model diferit și porți deterministe canon/structură. Un audit independent a fost scris de <strong>OpenCode (Big Pickle)</strong> în <code>AUDIT_2026-11-04.md</code>.</span><span class="l en">Assembled iteratively with <strong>Hermes Agent</strong>; agent rules are versioned in <code>AGENT.md</code> and <code>PROJECT_BRIEFING.md</code>. Each chapter passes a writer model, a different-model reviewer and deterministic canon/structure gates. An independent audit was written by <strong>OpenCode (Big Pickle)</strong> in <code>AUDIT_2026-11-04.md</code>.</span></div>
+<div class="chips"><span class="chip">Python 3.11+</span><span class="chip">Typer</span><span class="chip">Pydantic</span><span class="chip">google-genai</span><span class="chip">Pillow</span><span class="chip">pytest</span><span class="chip">Ruff</span><span class="chip">GitHub Actions</span></div>
+<div class="result">↳ <span class="l ro">2 titluri produse · 88/88 teste verzi · EPUB generat determinist</span><span class="l en">2 titles produced · 88/88 tests passing · deterministic EPUB build</span></div>
+<div style="margin-top:10px"><a class="src" href="https://github.com/LazyTitan0074/roman-pipeline" target="_blank" rel="noopener">github.com/LazyTitan0074/roman-pipeline ↗</a></div>
+</article><article class="card">
+<span class="num">02</span>
+<div class="cat"><span class="l ro">STUDIU DE CAZ · VERIFICARE LLM</span><span class="l en">CASE STUDY · LLM VERIFICATION</span></div>
+<h3>The Glass Crown</h3>
+<p class="sub"><span class="l ro">Nuvelă canon-blocată, livrată într-o zi, buget zero</span><span class="l en">Canon-locked novella delivered in one day, zero paid quota</span></p>
+<p><span class="l ro">Fantasy politic întunecat, 10 capitole, ~24.000 de cuvinte. Sistemul îmbină generarea LLM cu verificări deterministe de continuitate și cu spot-checkuri umane obligatorii. Documentul <code>CASE_STUDY.md</code> explică deciziile, erorile și limitele reale.</span><span class="l en">Dark political fantasy, 10 chapters, ~24,000 words. The system combines LLM generation with deterministic continuity checks and mandatory human spot-checks. <code>CASE_STUDY.md</code> documents the decisions, failures and real limits.</span></p>
+<div class="how"><b>HOW / CUM:</b> <span class="l ro">Routing între tieruri gratuite, reviewer local Ollama și reguli de respingere mecanizabile. 7 ciorne au fost respinse pentru încălcări canon, 3+ erori reale au fost prinse de om după ce reviewer-ul dăduse PASS, iar ~10 alerte false au fost filtrate de reguli. Autorii: 3 capitole complet umane, 1 complet model, 6 hibride.</span><span class="l en">Routing across free tiers, a local Ollama reviewer and mechanisable rejection rules. 7 drafts were rejected for canon violations, 3+ real issues were caught by humans after reviewer PASS, and ~10 false alarms were filtered by rules. Authorship: 3 fully human chapters, 1 fully model, 6 hybrid.</span></div>
+<div class="chips"><span class="chip">Python</span><span class="chip">LibriScribe</span><span class="chip">YAML / JSON</span><span class="chip">Ollama</span><span class="chip">EPUB</span></div>
+<div class="result">↳ <span class="l ro">400+ paragrafe urmărite sursă → manuscris → EPUB, 100% potrivire · 6 defecte de tooling documentate și corectate · repository privat</span><span class="l en">400+ paragraphs traced source → manuscript → EPUB, 100% match · 6 tooling defects documented and fixed · private repository</span></div>
+<div style="margin-top:10px"></div>
+</article><article class="card">
+<span class="num">03</span>
+<div class="cat"><span class="l ro">PRODUCȚIE LA SCARĂ</span><span class="l en">SCALE PRODUCTION</span></div>
+<h3>Gladiators Ascent</h3>
+<p class="sub"><span class="l ro">Aplicarea pipeline-ului pe 30 de capitole</span><span class="l en">Applying the pipeline across 30 chapters</span></p>
+<p><span class="l ro">Al doilea roman produs cu aceeași infrastructură: 30 de capitole, biblie completă de canon, ritm și voce, fiecare capitol cu veredicte separate pentru canon și structură.</span><span class="l en">The second novel produced on the same infrastructure: 30 chapters, a full canon/beat/voice bible, and separate canon and structure verdicts per chapter.</span></p>
+<div class="how"><b>HOW / CUM:</b> <span class="l ro">Fiecare capitol a trecut prin aceeași buclă agentică: scriitor → reviewer → porți deterministe → rescriere la respingere. Jurnalele <code>canon_log.jsonl</code> și cele 60 de fișiere de veredict păstrează trasa deciziilor.</span><span class="l en">Every chapter went through the same agentic loop: writer → reviewer → deterministic gates → rewrite on rejection. <code>canon_log.jsonl</code> and 60 verdict files preserve the decision trail.</span></div>
+<div class="chips"><span class="chip">Python</span><span class="chip">JSON verdicts</span><span class="chip">Markdown</span><span class="chip">EPUB</span></div>
+<div class="result">↳ <span class="l ro">30 capitole · 60 veredicte · manuscris și EPUB finale</span><span class="l en">30 chapters · 60 verdicts · final manuscript and EPUB</span></div>
+<div style="margin-top:10px"><a class="src" href="https://github.com/LazyTitan0074/roman-pipeline" target="_blank" rel="noopener">github.com/LazyTitan0074/roman-pipeline ↗</a></div>
+</article><article class="card">
+<span class="num">04</span>
+<div class="cat"><span class="l ro">DESIGN AI · LORE</span><span class="l en">AI DESIGN · LORE</span></div>
+<h3>Lara Master Collection</h3>
+<p class="sub"><span class="l ro">Vault de persona, lore și game design asistate de AI</span><span class="l en">AI-assisted persona, lore and game-design vault</span></p>
+<p><span class="l ro">Colecție privată structurată de 25 de carduri de personalitate AI, scenarii narative, documente de lore și concepte de campanii crossover, plus un proiect de roman în LibriScribe.</span><span class="l en">A structured private vault of 25 AI persona cards, narrative scenarios, lore documents and crossover campaign concepts, plus a LibriScribe novel project.</span></p>
+<div class="how"><b>HOW / CUM:</b> <span class="l ro">Organizare, unificare lingvistică și migrare făcute cu agenți AI; proiectul LibriScribe a fost reparat pentru a rula cu <code>mistral-large-latest</code>. Jurnalul de migrare păstrează istoricul schimbărilor.</span><span class="l en">Organisation, language unification and migration done with AI agents; the LibriScribe project was repaired to run with <code>mistral-large-latest</code>. A migration journal preserves the change history.</span></div>
+<div class="chips"><span class="chip">JSON persona cards</span><span class="chip">Markdown</span><span class="chip">SillyTavern / LM Studio formats</span><span class="chip">LibriScribe</span><span class="chip">DOCX</span></div>
+<div class="result">↳ <span class="l ro">Index navigabil · formate multiple de import · istoric de migrare versionat</span><span class="l en">Navigable index · multiple import formats · versioned migration history</span></div>
+<div style="margin-top:10px"></div>
+</article><article class="card">
+<span class="num">05</span>
+<div class="cat"><span class="l ro">INFRASTRUCTURĂ · SELF-HOSTED</span><span class="l en">INFRASTRUCTURE · SELF-HOSTED</span></div>
+<h3>Homelab DNS</h3>
+<p class="sub"><span class="l ro">Pi-hole și stack DNS auto-găzduit</span><span class="l en">Self-hosted Pi-hole and DNS stack</span></p>
+<p><span class="l ro">Serviciu DNS cu blocare de reclame, definit prin Docker Compose, cu configurare dnsmasq și surse AUR pentru construirea componentelor.</span><span class="l en">Ad-blocking DNS service defined via Docker Compose, with dnsmasq configuration and AUR sources for building components.</span></p>
+<div class="how"><b>HOW / CUM:</b> <span class="l ro">Agenții AI au fost folosiți pentru operații și documentare — inclusiv un runbook autonom de restaurare a serverului după reinstalare. Codul upstream Pi-hole și yay rămâne cod terț, nu contribuție locală.</span><span class="l en">AI agents were used for operations and documentation — including an autonomous server-restore runbook. Upstream Pi-hole and yay code remains third-party, not a local contribution.</span></div>
+<div class="chips"><span class="chip">Docker Compose</span><span class="chip">Pi-hole / FTL</span><span class="chip">dnsmasq</span><span class="chip">AUR / PKGBUILD</span></div>
+<div class="result">↳ <span class="l ro">Configurație versionată · procedură de recuperare documentată</span><span class="l en">Versioned configuration · documented recovery procedure</span></div>
+<div style="margin-top:10px"></div>
+</article></div>
+</section>
+
+<section id="case">
+  <p class="kicker"><span class="l ro">Dovadă</span><span class="l en">Evidence</span></p>
+  <h2><span class="l ro">Ce s-a întâmplat în The Glass Crown</span><span class="l en">What happened in The Glass Crown</span></h2>
+  <p class="sec-intro"><span class="l ro">Un studiu de caz scris în timpul execuției, nu după: respingeri, erori de reviewer, defecte de tooling și decizii care au rezistat.</span><span class="l en">A case study written during execution, not after: rejections, reviewer errors, tooling defects and decisions that held.</span></p>
+  <div class="metrics">
+    <div class="metric"><b>7</b><span><span class="l ro">ciorne respinse pentru canon</span><span class="l en">drafts rejected for canon</span></span></div>
+    <div class="metric"><b>3+</b><span><span class="l ro">erori reale prinse de om</span><span class="l en">real issues caught by humans</span></span></div>
+    <div class="metric"><b>~10</b><span><span class="l ro">alerte false filtrate</span><span class="l en">false alarms filtered</span></span></div>
+    <div class="metric"><b>100%</b><span><span class="l ro">potrivire sursă → EPUB</span><span class="l en">source → EPUB match</span></span></div>
+  </div>
+  <p class="sec-intro"><span class="l ro">Repartizarea autoriei: 3 capitole complet umane, 1 complet generat, 6 hibride. Șase defecte ale uneltelor au fost găsite, corectate și documentate (date învechite încorporate, garduri de siguranță trunchiate, sortare greșită a capitolelor, curse de build, suprascrierea checkpoint-urilor și verificări aritmetice nesigure pentru modelele mici).</span><span class="l en">Authorship split: 3 fully human chapters, 1 fully generated, 6 hybrid. Six tooling defects were found, fixed and documented (stale embedded data, truncated guardrails, wrong chapter sort, build races, checkpoint clobbering and unreliable arithmetic checks in small models).</span></p>
+</section>
+
+<section id="archive">
+  <p class="kicker"><span class="l ro">Arhivă & context</span><span class="l en">Archive & context</span></p>
+  <h2><span class="l ro">Restul mediului de lucru</span><span class="l en">The rest of the working environment</span></h2>
+  <div class="arch"><div><b><span class="l ro">Pachet de livrare și audit</span><span class="l en">Delivery & audit bundle</span></b><p><span class="l ro">Dosarul <code>1_PROIECTE_AI</code> conține rapoarte zilnice, audituri și pachetele EPUB ale celor două nuvele — o arhivă a procesului, nu doar a rezultatului.</span><span class="l en"><code>1_PROIECTE_AI</code> holds daily reports, audits and the EPUB bundles of both novellas — an archive of the process, not only of the output.</span></p></div><div><b><span class="l ro">Arhiva Velvet Empire</span><span class="l en">Velvet Empire archive</span></b><p><span class="l ro">Prima versiune a pipeline-ului, păstrată pentru istoric, cu prompturi explicite de producție și veredicte per capitol.</span><span class="l en">The first version of the pipeline, kept for history, with explicit production prompts and per-chapter verdicts.</span></p></div><div><b><span class="l ro">Server Tekkit Lite</span><span class="l en">Tekkit Lite server</span></b><p><span class="l ro">Server Minecraft modat, auto-găzduit, folosit ca mediu de operare și test. Codul sursă este terț; nu revendicăm autor AI asupra lui.</span><span class="l en">Self-hosted modded Minecraft server used as an operations and test environment. Its source is third-party; no AI authorship is claimed over it.</span></p></div></div>
+  <p class="kicker" style="margin-top:30px"><span class="l ro">Agenți & unelte</span><span class="l en">Agents & tools</span></p>
+  <div class="agents"><div><b>Hermes Agent</b> — <em><span class="l ro">asamblarea pipeline-urilor și skilluri custom</span><span class="l en">pipeline assembly and custom skills</span></em></div><div><b>OpenCode · Big Pickle</b> — <em><span class="l ro">audit independent și verificare</span><span class="l en">independent audit and verification</span></em></div><div><b>Gemini CLI · Antigravity</b> — <em><span class="l ro">suport pentru dezvoltare și analiză</span><span class="l en">development and analysis support</span></em></div><div><b>Aider / OpenClaw</b> — <em><span class="l ro">fluxuri de lucru agențice complementare</span><span class="l en">complementary agentic workflows</span></em></div></div>
+</section>
+
+<footer>
+  <div><b>Vlad</b> · <a href="mailto:bizoivlad@gmail.com">bizoivlad@gmail.com</a> · <a href="https://github.com/LazyTitan0074">github.com/LazyTitan0074</a></div>
+  <div style="margin-top:8px"><span class="l ro">Generat la 23 noiembrie 2026 din inventarul proiectelor de pe server. Descrierile au fost verificate din cod, documentație și istoric git. Date de autentificare, adrese interne, text de manuscris nepublicat și detalii personale au fost excluse intenționat.</span><span class="l en">Generated on 23 November 2026 from the server project inventory. Descriptions were verified against code, docs and git history. Credentials, internal addresses, unpublished manuscript text and personal details were intentionally excluded.</span></div>
+</footer>
+</div>
+<script>
+const b=document.body;
+function setLang(l){b.dataset.lang=l;document.documentElement.lang=l;
+ document.querySelectorAll('.langswitch button').forEach(x=>x.classList.toggle('on',x.dataset.l===l));
+ localStorage.setItem('pf_lang',l);}
+document.querySelectorAll('.langswitch button').forEach(x=>x.onclick=()=>setLang(x.dataset.l));
+setLang(localStorage.getItem('pf_lang')||'ro');
+</script>
+</body></html>
