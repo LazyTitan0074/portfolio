@@ -1,8 +1,11 @@
 # Vlad — CV / Curriculum Vitae
 
-**AI Systems Builder · Agentic Workflows · Long-form Generation**
+**Software Engineer · AI Systems & Agentic Workflows**
 
-bizoivlad@gmail.com · [github.com/LazyTitan0074](https://github.com/LazyTitan0074) · [Portofoliu live](https://lazytitan0074.github.io/portfolio/)
+> **EN:** I build production-grade AI workflows: pipelines, verification gates, and self-hosted infrastructure. I don't just prompt — I architect.
+> **RO:** Construiesc fluxuri AI de calitate producție: conducte, porți de verificare și infrastructură self-hosted. Nu doar scriu prompturi — proiectez sisteme.
+
+bizoivlad@gmail.com · [github.com/LazyTitan0074](https://github.com/LazyTitan0074) · [Portofoliu live](https://lazytitan0074.github.io/portfolio/) · [Demo video](docs/media/demo-pipeline.mp4)
 
 ---
 

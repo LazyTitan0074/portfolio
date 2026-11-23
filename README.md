@@ -1,4 +1,4 @@
-# Vlad — AI Systems & Agentic Workflows
+# Vlad — Software Engineer · AI Systems & Agentic Workflows
 
 **Technical portfolio · Portofoliu tehnic · 2026**
 
@@ -18,9 +18,14 @@
 - **PDF RO:** [`Portofoliu_RO.pdf`](Portofoliu_RO.pdf) · **PDF EN:** [`Portfolio_EN.pdf`](Portfolio_EN.pdf)
 - **Live site:** [lazytitan0074.github.io/portfolio](https://lazytitan0074.github.io/portfolio/)
 - **CV:** [RO](CV_RO.pdf) · [EN](CV_EN.pdf) · [Markdown](CV.md)
-- **Screenshots:** [hero](docs/screenshots/01-hero.png) · [method](docs/screenshots/02-method-and-projects.png) · [projects](docs/screenshots/03-projects.png) · [case study](docs/screenshots/04-case-study.png)
+- **Star project demo:** [12s MP4](docs/media/demo-pipeline.mp4) · [GIF](docs/media/demo-pipeline.gif) · [source repo](https://github.com/LazyTitan0074/roman-pipeline)
+- **Public glimpses into private projects:** [The Glass Crown — chapters 1–2](demos/glass-crown-preview.md) · [Lara vault — 3 sanitised schema samples](demos/lara-schema-samples.md)
+- **Screenshots:** [hero](docs/screenshots/01-hero.png) · [star demo](docs/screenshots/02-star-demo.png) · [projects](docs/screenshots/03-projects.png) · [case study](docs/screenshots/04-case-study.png)
 
-![Portfolio hero](docs/screenshots/01-hero.png)
+![Roman Pipeline demo](docs/media/demo-pipeline.gif)
+
+**EN:** I build production-grade AI workflows: pipelines, verification gates, and self-hosted infrastructure. I don't just prompt — I architect.
+**RO:** Construiesc fluxuri AI de calitate producție: conducte, porți de verificare și infrastructură self-hosted. Nu doar scriu prompturi — proiectez sisteme.
 
 ---
 
@@ -28,10 +33,10 @@
 
 | # | Project | What it does | Stack | Source |
 |---|---|---|---|---|
-| 01 | **Roman Pipeline** | Reusable Python pipeline for long-form fiction: concept → canon bible → per-chapter writing with writer/reviewer models and deterministic gates → EPUB. Rejected chapters are rewritten, never patched. | Python, Typer, Pydantic, google-genai, pytest, Ruff, GitHub Actions | [public repo](https://github.com/LazyTitan0074/roman-pipeline) |
-| 02 | **The Glass Crown** | Canon-locked novella, 10 chapters / ~24k words, delivered in one day on free-tier models + local Ollama reviewer. Documented rejections, reviewer errors and tooling defects. | Python, LibriScribe, YAML/JSON, Ollama, EPUB | case study in the portfolio; private repo |
+| 01 ★ | **Roman Pipeline** — *star project* | Reusable Python pipeline for long-form fiction: concept → canon bible → per-chapter writing with writer/reviewer models and deterministic gates → EPUB. Rejected chapters are rewritten, never patched. Watch the [12s demo](docs/media/demo-pipeline.mp4). | Python, Typer, Pydantic, google-genai, pytest, Ruff, GitHub Actions | [public repo](https://github.com/LazyTitan0074/roman-pipeline) |
+| 02 | **The Glass Crown** | Canon-locked novella, 10 chapters / ~24k words, delivered in one day on free-tier models + local Ollama reviewer. Documented rejections, reviewer errors and tooling defects. | Python, LibriScribe, YAML/JSON, Ollama, EPUB | [public preview: ch. 1–2](demos/glass-crown-preview.md); full repo private |
 | 03 | **Gladiators Ascent** | Same pipeline applied to a 30-chapter novel: 60 canon/structure verdicts and a deterministic EPUB build. | Python, JSON verdicts, Markdown, EPUB | included in `roman-pipeline` |
-| 04 | **Lara Master Collection** | Structured AI persona / lore / game-design vault: 25 persona cards, narrative scenarios and a LibriScribe novel project repaired for `mistral-large-latest`. | JSON, Markdown, DOCX, LibriScribe | private repo |
+| 04 | **Lara Master Collection** | Structured AI persona / lore / game-design vault: 25 persona cards, narrative scenarios and a LibriScribe novel project repaired for `mistral-large-latest`. | JSON, Markdown, DOCX, LibriScribe | [public schema samples](demos/lara-schema-samples.md); full vault private |
 | 05 | **Homelab DNS** | Self-hosted Pi-hole/FTL stack via Docker Compose, with dnsmasq config and an autonomous server-restore runbook written for AI agents. | Docker Compose, Pi-hole, dnsmasq, AUR | configuration + runbook on server |
 | 06 | **pragma-rpg** | AI-powered RPG campaign generator and live Dungeon Master, self-hosted with zero dependencies. | Python | [public repo](https://github.com/LazyTitan0074/pragma-rpg) |
 

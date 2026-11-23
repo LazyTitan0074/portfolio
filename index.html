@@ -47,6 +47,18 @@ h2{font-size:clamp(26px,4vw,40px);letter-spacing:-.035em;margin:0 0 12px}
 .chip{font-size:10px;font-family:ui-monospace,"DejaVu Sans Mono",monospace;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 9px;background:rgba(255,255,255,.02)}
 .result{font-size:12px;color:var(--a);font-weight:600;border-top:1px dashed var(--line);padding-top:12px;margin-top:4px}
 a.src{color:var(--c);font-size:12px;text-decoration:none;border-bottom:1px dotted var(--c)}
+.translation{color:#cbd6e6;font-size:15px;max-width:820px;margin:-10px 0 20px;padding-left:14px;border-left:3px solid var(--b)}
+.translation b{color:var(--txt)}
+.contact-top{margin-left:auto;color:#06121e!important;background:var(--a);border-radius:999px;padding:8px 16px;font-size:12px;font-weight:800;text-decoration:none;letter-spacing:.02em}
+.floating{position:fixed;right:24px;bottom:24px;z-index:50;background:var(--a);color:#06121e!important;text-decoration:none;font-weight:800;font-size:13px;padding:12px 20px;border-radius:999px;box-shadow:0 12px 34px rgba(94,234,212,.28)}
+.star{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:center;background:linear-gradient(135deg,rgba(94,234,212,.08),rgba(167,139,250,.08));border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:26px}
+.star-figure{margin:0;background:#080d18;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.star-figure video,.star-figure img{display:block;width:100%;height:auto}
+.star-figure figcaption{padding:9px 12px;color:var(--muted);font-size:11px;background:var(--panel2)}
+.star .big{font-size:clamp(27px,4vw,42px);letter-spacing:-.035em;margin:10px 0}
+.star .tag{display:inline-block;background:var(--b);color:#120a24;border-radius:999px;padding:5px 12px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.star p{color:#cbd6e6;font-size:14px;margin:14px 0}
+.star .links{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
 .workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
 .step{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:20px}
 .step i{font-style:normal;color:var(--b);font-family:ui-monospace,monospace;font-size:12px}
@@ -74,7 +86,8 @@ code{font-family:ui-monospace,"DejaVu Sans Mono",monospace;font-size:.9em;color:
   .grid,.arch,.workflow,.metrics,.stats{gap:8px}
   .card,.step,.metric,.arch div{background:#fff!important;border:1px solid #d6deea!important;break-inside:avoid;page-break-inside:avoid;padding:12px}
   .card h3{font-size:14pt}.card p,.card .how,.card .sub,.step p,.arch p{font-size:9.2pt}
-  .num{display:none}.langswitch,.actions{display:none}
+  .num{display:none}.langswitch,.actions,.floating,.contact-top{display:none}
+  .star{display:block;padding:10px}.star .star-figure{margin-bottom:10px}
   section{padding:22px 0 0}footer{margin-top:26px;padding-top:14px}
   a{color:#0e7490;text-decoration:none}
   code{color:#0f766e;background:rgba(15,118,110,.07)}
@@ -83,17 +96,38 @@ code{font-family:ui-monospace,"DejaVu Sans Mono",monospace;font-size:.9em;color:
 <body data-lang="ro">
 <div class="wrap">
 <header>
-  <div class="brand"><div class="mark">V</div><div><small><span class="l ro">Portofoliu tehnic</span><span class="l en">Technical portfolio</span></small><small>2026 · v1.0</small></div></div>
+  <div class="brand"><div class="mark">V</div><div><small><span class="l ro">Portofoliu tehnic</span><span class="l en">Technical portfolio</span></small><small>2026 · v1.0</small></div><a class="contact-top" href="mailto:bizoivlad@gmail.com"><span class="l ro">Contactează-mă ↗</span><span class="l en">Contact me ↗</span></a></div>
   <h1>VLAD<span>.</span></h1>
-  <p class="role"><span class="l ro">AI Systems Builder · Agentic Workflows · Long-form Generation</span><span class="l en">AI Systems Builder · Agentic Workflows · Long-form Generation</span></p>
+  <p class="role"><span class="l ro">Software Engineer · AI Systems &amp; Agentic Workflows</span><span class="l en">Software Engineer · AI Systems &amp; Agentic Workflows</span></p>
+  <p class="translation"><span class="l ro"><b>Construiesc fluxuri AI de calitate producție:</b> conducte, porți de verificare și infrastructură self-hosted. Nu doar scriu prompturi — proiectez sisteme.</span><span class="l en"><b>I build production-grade AI workflows:</b> pipelines, verification gates, and self-hosted infrastructure. I don’t just prompt — I architect.</span></p>
   <p class="lede"><span class="l ro">Proiectele de aici nu au fost doar „scrise cu AI”. Au fost <strong>proiectate, implementate, depanate și documentate împreună cu agenți AI</strong> — cu omul în rol de arhitect care stabilește regulile și face verificarea finală. Fiecare afirmație din acest portofoliu poate fi urmărită până la un fișier sau un commit.</span><span class="l en">These projects were not merely “written with AI”. They were <strong>designed, implemented, debugged and documented together with AI agents</strong> — with the human acting as architect who sets the rules and performs final verification. Every claim here traces back to a file or a commit.</span></p>
   <div class="actions">
-    <a class="btn primary" href="#projects"><span class="l ro">Vezi proiectele</span><span class="l en">View projects</span> →</a>
+    <a class="btn primary" href="#star"><span class="l ro">Vezi demo-ul</span><span class="l en">Watch the demo</span> →</a>
+    <a class="btn" href="#projects"><span class="l ro">Toate proiectele</span><span class="l en">All projects</span></a>
     <a class="btn" href="mailto:bizoivlad@gmail.com">bizoivlad@gmail.com</a>
     <div class="langswitch"><button data-l="ro">RO</button><button data-l="en">EN</button></div>
   </div>
   <div class="stats"><div class="stat"><b>05</b><span><span class="l ro">proiecte principale</span><span class="l en">featured projects</span></span></div><div class="stat"><b>03</b><span><span class="l ro">repositorii publice</span><span class="l en">public repositories</span></span></div><div class="stat"><b>50</b><span><span class="l ro">capitole livrate</span><span class="l en">chapters delivered</span></span></div><div class="stat"><b>88/88</b><span><span class="l ro">teste verzi</span><span class="l en">tests passing</span></span></div><div class="stat"><b>02</b><span><span class="l ro">skilluri agent custom</span><span class="l en">custom agent skills</span></span></div></div>
 </header>
+
+<section id="star">
+  <p class="kicker"><span class="l ro">Proiectul star</span><span class="l en">Star project</span></p>
+  <h2><span class="l ro">Începe cu Roman Pipeline</span><span class="l en">Start with Roman Pipeline</span></h2>
+  <div class="star">
+    <figure class="star-figure"><video autoplay loop muted playsinline poster="docs/media/demo-pipeline-still.png"><source src="docs/media/demo-pipeline.mp4" type="video/mp4"></video><figcaption>12s demo · redare narativă din CLI-ul și veredictele reale · <a href="docs/media/demo-pipeline.gif">GIF</a></figcaption></figure>
+    <div>
+      <span class="tag"><span class="l ro">Open source · MIT</span><span class="l en">Open source · MIT</span></span>
+      <div class="big">Roman Pipeline</div>
+      <p><span class="l ro">Conductă Python care transformă o idee în EPUB prin pași verificabili: specificație → planificare agentică → scriitor și reviewer cu modele diferite → porți canon/structură → rescriere completă la respingere. Demo-ul de alături rulează exact comenzile din CLI și arată un veredict real.</span><span class="l en">A Python pipeline that turns an idea into an EPUB through verifiable steps: spec → agentic planning → writer and reviewer on different models → canon/structure gates → full rewrite on rejection. The demo plays the real CLI commands and shows a real verdict.</span></p>
+      <div class="links">
+        <a class="btn primary" href="https://github.com/LazyTitan0074/roman-pipeline" target="_blank" rel="noopener">GitHub →</a>
+        <a class="btn" href="docs/media/demo-pipeline.mp4"><span class="l ro">Descarcă demo-ul</span><span class="l en">Download demo</span></a>
+        <a class="btn" href="demos/glass-crown-preview.md"><span class="l ro">Preview nuvelă</span><span class="l en">Novella preview</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+<a class="floating" href="mailto:bizoivlad@gmail.com">✉ <span class="l ro">Contact</span><span class="l en">Contact</span></a>
 
 <section id="method">
   <p class="kicker"><span class="l ro">Cum lucrez</span><span class="l en">How I work</span></p>
@@ -125,7 +159,7 @@ code{font-family:ui-monospace,"DejaVu Sans Mono",monospace;font-size:.9em;color:
 <div class="how"><b>HOW / CUM:</b> <span class="l ro">Routing între tieruri gratuite, reviewer local Ollama și reguli de respingere mecanizabile. 7 ciorne au fost respinse pentru încălcări canon, 3+ erori reale au fost prinse de om după ce reviewer-ul dăduse PASS, iar ~10 alerte false au fost filtrate de reguli. Autorii: 3 capitole complet umane, 1 complet model, 6 hibride.</span><span class="l en">Routing across free tiers, a local Ollama reviewer and mechanisable rejection rules. 7 drafts were rejected for canon violations, 3+ real issues were caught by humans after reviewer PASS, and ~10 false alarms were filtered by rules. Authorship: 3 fully human chapters, 1 fully model, 6 hybrid.</span></div>
 <div class="chips"><span class="chip">Python</span><span class="chip">LibriScribe</span><span class="chip">YAML / JSON</span><span class="chip">Ollama</span><span class="chip">EPUB</span></div>
 <div class="result">↳ <span class="l ro">400+ paragrafe urmărite sursă → manuscris → EPUB, 100% potrivire · 6 defecte de tooling documentate și corectate · repository privat</span><span class="l en">400+ paragraphs traced source → manuscript → EPUB, 100% match · 6 tooling defects documented and fixed · private repository</span></div>
-<div style="margin-top:10px"></div>
+<div style="margin-top:10px"><a class="src" href="demos/demos/glass-crown-preview.md" target="_blank" rel="noopener">public preview · chapters 1–2 ↗</a></div>
 </article><article class="card">
 <span class="num">03</span>
 <div class="cat"><span class="l ro">PRODUCȚIE LA SCARĂ</span><span class="l en">SCALE PRODUCTION</span></div>
@@ -145,7 +179,7 @@ code{font-family:ui-monospace,"DejaVu Sans Mono",monospace;font-size:.9em;color:
 <div class="how"><b>HOW / CUM:</b> <span class="l ro">Organizare, unificare lingvistică și migrare făcute cu agenți AI; proiectul LibriScribe a fost reparat pentru a rula cu <code>mistral-large-latest</code>. Jurnalul de migrare păstrează istoricul schimbărilor.</span><span class="l en">Organisation, language unification and migration done with AI agents; the LibriScribe project was repaired to run with <code>mistral-large-latest</code>. A migration journal preserves the change history.</span></div>
 <div class="chips"><span class="chip">JSON persona cards</span><span class="chip">Markdown</span><span class="chip">SillyTavern / LM Studio formats</span><span class="chip">LibriScribe</span><span class="chip">DOCX</span></div>
 <div class="result">↳ <span class="l ro">Index navigabil · formate multiple de import · istoric de migrare versionat</span><span class="l en">Navigable index · multiple import formats · versioned migration history</span></div>
-<div style="margin-top:10px"></div>
+<div style="margin-top:10px"><a class="src" href="demos/demos/lara-schema-samples.md" target="_blank" rel="noopener">public schema samples · 3 of 25 ↗</a></div>
 </article><article class="card">
 <span class="num">05</span>
 <div class="cat"><span class="l ro">INFRASTRUCTURĂ · SELF-HOSTED</span><span class="l en">INFRASTRUCTURE · SELF-HOSTED</span></div>
